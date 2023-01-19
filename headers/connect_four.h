@@ -21,7 +21,7 @@ typedef struct s_obj
 {
 	int		x;
 	double	start_y;
-	int	end_y;
+	int		end_y;
 	int		is_free;
 }t_obj;
 

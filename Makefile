@@ -6,11 +6,11 @@
 #    By: aarsenio <aarsenio@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/12 18:43:51 by edos-san          #+#    #+#              #
-#    Updated: 2023/01/19 20:27:29 by aarsenio         ###   ########.fr        #
+#    Updated: 2023/01/19 20:30:54 by aarsenio         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			= 	gcc-10 -Wall -Wextra -Werror #-g -fsanitize=address
+CC			= 	gcc-10 -Wall -Wextra -Werror -g -fsanitize=address
 RM			= 	/bin/rm -f
 NAME		= 	c4
 INCLUDES	= 	-Iheaders/

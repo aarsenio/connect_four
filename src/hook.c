@@ -8,29 +8,9 @@ void	new_piece(void)
 	data()->piece->is_free = 0;
 }
 
-void	set_position_piece(int x)
-{
-	int i = 6;
-
-	data()->piece->x = x;	
-	while (--i >= 0)
-		if (data()->board[i][x] == 0)
-			break ;
-	data()->piece->end_y = (i * PIECE_RES) + PIECE_RES;
-}
-
-
 void	move(int x)
 {
-	int i = 6;
-	while (--i >= 0)
-	{
-		if (data()->board[i][x] == 0)
-		{
-			data()->board[i][x] = data()->turn;
-			break ;
-		}
-	}
+	data()->board[data()->piece->end_y][x] = data()->turn;
 	if (data()->turn == RED)
 		data()->turn = YELLOW;
 	else
@@ -39,6 +19,7 @@ void	move(int x)
 
 int	mouse(int event, void *param)
 {
+	int i = 6;
 
 	(void) param;
 	if (event != 1 || (data()->piece && data()->piece->is_free))
@@ -46,7 +27,13 @@ int	mouse(int event, void *param)
 	if (data()->piece)
 	{
 		if (data()->board[0][data()->piece->x] == 0)
+		{
+			while (--i >= 0)
+				if (data()->board[i][data()->piece->x] == 0)
+					break ;
+			data()->piece->end_y = i;
 			data()->piece->is_free = 1;
+		}
 	}
 	return (0);
 }

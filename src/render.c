@@ -109,10 +109,12 @@ void	board_render(void)
 		if (data()->piece->is_free)
 		{
 			data()->piece->start_y += 15.9f;
-			if ((int)(data()->piece->start_y) >= data()->piece->end_y){
-			move(data()->piece->x);
-			free(data()->piece);
-			new_piece();
+			if ((int)(data()->piece->start_y) >= (data()->piece->end_y * PIECE_RES) + PIECE_RES)
+			{
+				move(data()->piece->x);
+				free(data()->piece);
+				data()->piece = NULL;
+				new_piece();
 			}
 		}
 	}
