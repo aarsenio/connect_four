@@ -16,7 +16,7 @@ void	set_position_piece(int x)
 	while (--i >= 0)
 		if (data()->board[i][x] == 0)
 			break ;
-	data()->piece->end_y = (i * PIECE_RES) + 128;
+	data()->piece->end_y = (i * PIECE_RES) + PIECE_RES;
 }
 
 

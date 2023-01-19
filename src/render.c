@@ -77,7 +77,7 @@ void	draw_board(void)
 		{
 			color = mlx_get_pixel(data()->img[0], i, j);
 			if (color != mlx_rgb_to_int(0, 215, 0, 255))
-				mlx_draw_pixel(data()->mlx_img, i, j + 128, color);
+				mlx_draw_pixel(data()->mlx_img, i, j + PIECE_RES, color);
 		}
 	}
 }
