@@ -22,6 +22,7 @@ int	main(int ac, char **av)
 	data()->win = mlx_new_window(data()->mlx, WINDOW_RES, WINDOW_RES, "Connect 4");
 	image_load();
 	mlx_mouse_hook(data()->win, mouse, data);
+	mlx_hook(data()->win, 17, (1L << 2), exit_game, &data);
 	mlx_loop_hook(data()->mlx, animation, &data);
 	mlx_loop(data()->mlx);
 }

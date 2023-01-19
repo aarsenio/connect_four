@@ -42,7 +42,7 @@ void	board_render(void);
 int		mouse(int event, void *param);
 void	move(int x);
 void	new_piece(void);
-void	exit_game(void);
+int		exit_game(void *param);
 void	set_position_piece(int x);
 
 #endif
