@@ -4,7 +4,6 @@ int	animation(void *param)
 {
 	int x, y;
 
-
 	(void) param;
 	mlx_mouse_get_pos(data()->mlx, data()->win, &x, &y);
 	if (data()->piece && !data()->piece->is_free)
