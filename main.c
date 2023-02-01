@@ -6,7 +6,7 @@ int	animation(void *param)
 
 	(void) param;
 	mlx_mouse_get_pos(data()->mlx, data()->win, &x, &y);
-	if (data()->piece && !data()->piece->is_free)
+	if (data()->piece && !data()->piece->is_free && x <= WINDOW_RES && x >= 0)
 		data()->piece->x = (x / PIECE_RES);
 	board_render();
 	return (1);
